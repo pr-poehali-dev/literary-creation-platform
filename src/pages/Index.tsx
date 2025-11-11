@@ -11,8 +11,9 @@ import ReaderProfile from '@/components/webapp/ReaderProfile';
 import Community from '@/components/webapp/Community';
 import Analytics from '@/components/webapp/Analytics';
 import Recommendations from '@/components/webapp/Recommendations';
+import Monetization from '@/components/webapp/Monetization';
 
-type ViewType = 'home' | 'library' | 'editor' | 'author-profile' | 'reader-profile' | 'community' | 'analytics' | 'recommendations';
+type ViewType = 'home' | 'library' | 'editor' | 'author-profile' | 'reader-profile' | 'community' | 'analytics' | 'recommendations' | 'monetization';
 
 const Index = () => {
   const [currentView, setCurrentView] = useState<ViewType>('home');
@@ -34,6 +35,8 @@ const Index = () => {
         return <Analytics />;
       case 'recommendations':
         return <Recommendations />;
+      case 'monetization':
+        return <Monetization />;
       default:
         return (
           <>
@@ -196,7 +199,7 @@ const Index = () => {
                 <Icon name="BookOpen" className="w-6 h-6 text-white" />
               </div>
               <span className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                LitHub
+                LITMACH
               </span>
             </div>
 
@@ -214,6 +217,10 @@ const Index = () => {
                   <Button variant="ghost" onClick={() => setCurrentView('analytics')}>
                     <Icon name="BarChart3" className="w-4 h-4 mr-2" />
                     Аналитика
+                  </Button>
+                  <Button variant="ghost" onClick={() => setCurrentView('monetization')}>
+                    <Icon name="DollarSign" className="w-4 h-4 mr-2" />
+                    Монетизация
                   </Button>
                 </>
               )}
@@ -255,7 +262,7 @@ const Index = () => {
                 <div className="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
                   <Icon name="BookOpen" className="w-5 h-5 text-white" />
                 </div>
-                <span className="text-xl font-bold">LitHub</span>
+                <span className="text-xl font-bold">LITMACH</span>
               </div>
               <p className="text-sm text-muted-foreground">
                 Платформа для авторов и читателей, где рождаются литературные шедевры
@@ -294,7 +301,7 @@ const Index = () => {
           </div>
 
           <div className="mt-12 pt-8 border-t text-center text-sm text-muted-foreground">
-            <p>© 2024 LitHub. Все права защищены. Создано с любовью к литературе.</p>
+            <p>© 2024 LITMACH. Все права защищены. Создано с любовью к литературе.</p>
           </div>
         </div>
       </footer>
